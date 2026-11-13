@@ -23,3 +23,10 @@ class Config:
             f"PWD={cls.DB_PASSWORD};"
             f"TrustServerCertificate=yes;"
         )
+if __name__ == "__main__":
+    print(f"DB_SERVER: '{Config.DB_SERVER}'")
+    print(f"DB_NAME: '{Config.DB_NAME}'")
+    print(f"DB_USER: '{Config.DB_USER}'")
+    print(f"DB_PASSWORD: '{Config.DB_PASSWORD}'")
+    print(f"DB_DRIVER: '{Config.DB_DRIVER}'")
+    print(f"\nConnection string:\n{Config.get_connection_string()}")

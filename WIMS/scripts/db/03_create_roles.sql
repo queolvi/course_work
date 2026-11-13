@@ -150,3 +150,4 @@ END
 ELSE
     PRINT N'audit user has already been created';
 GO
+

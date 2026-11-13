@@ -4,18 +4,18 @@ from typing import Optional
 from enum import Enum
 
 class stock_movement_type(Enum):
-    receipt
-    shipment
-    write_off
-    adjustment
+    receipt = "receipt"
+    shipment = "shipment"
+    write_off = "write_off"
+    adjustment = "adjustment"
 
 @dataclass
 class StockMovement:
     movement_id: int
     batch_id: int
-    type: Optional[stock_movement_type] = None  
     quantity: int
     user_id: int
+    type: stock_movement_type  
     document_id: Optional[int] = None
     created_at: Optional[datetime] = None
 

@@ -4,9 +4,9 @@ from typing import Optional
 from enum import Enum
 
 class reservations_statuses(Enum):
-    active
-    fulfilled
-    cancelled
+    active = "active"
+    fulfilled = "fulfilled"
+    cancelled = "cancelled"
     
 @dataclass
 class Reservation:
@@ -14,7 +14,7 @@ class Reservation:
     batch_id: int
     user_id: int
     quantity: int
-    status: Optional[reservations_statuses] = active
+    status: reservations_statuses = reservations_statuses.active
     expires_at: Optional[datetime] = None
     order_id: Optional[int] = None
     created_at: Optional[datetime] = None
