@@ -1,7 +1,9 @@
 from datetime import datetime
 from typing import List, Optional
 
+from app.models.reservation import reservations_statuses
 from app.models.reservation import Reservation
+
 from app.repositories.base_repo import BaseRepository
 
 
@@ -64,7 +66,7 @@ class ReservationRepository(BaseRepository[Reservation]):
         self.commit()
         return cursor.fetchone().reservation_id
 
-    def update_status(self, reservation_id: int, status: str) -> bool:
+    def update_status(self, reservation_id: int, status: reservations_statuses) -> bool:
         cursor = self._execute(
             "UPDATE dbo.RESERVATIONS SET status = ? WHERE reservation_id = ?",
             (status, reservation_id),)
