@@ -1,0 +1,4 @@
+pyodbc
+pydantic
+python-dotenv
+pytest
